@@ -2,7 +2,8 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from telethon import functions, types
 from telethon.tl.types import ChatBannedRights
 
-from FallenRobot import telethn as tbot, BOT_NAME
+from FallenRobot import BOT_NAME
+from FallenRobot import telethn as tbot
 from FallenRobot.events import register
 from FallenRobot.modules.sql.night_mode_sql import (
     add_nightmode,
