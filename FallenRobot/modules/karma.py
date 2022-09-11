@@ -17,8 +17,8 @@ from FallenRobot.helper_extra.dbfun import (
 from FallenRobot.utils.errors import capture_err
 from FallenRobot.utils.permissions import adminsOnly
 
-regex_upvote = r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|🖤|❣️|💝|💖|💕|❤|💘|cool|good|👍|baby|bsdk|bhadve|betichod|thankyou|love|pro)$"
-regex_downvote = r"^(\-|\-\-|\-1|👎|💔|noob|weak|fuck off|nub|gey|mf)$"
+regex_upvote = r"^((?i)\+|\+\+|\+1|\+69|thx|thanx|thanks|🖤|❣️|💝|💖|💕|❤|💘|cool|good|👍|baby|thankyou|love|pro)$"
+regex_downvote = r"^(\-|\-\-|\-1|👎|💔|noob|weak|fuck off|nub|gey|kid|shit|mf)$"
 
 
 karma_positive_group = 3
