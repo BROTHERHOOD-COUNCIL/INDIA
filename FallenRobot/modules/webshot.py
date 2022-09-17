@@ -22,7 +22,7 @@ async def take_ss(_, message: Message):
         try:
             await message.reply_document(
                 document=f"https://webshot.amanoteam.com/print?q={url}",
-                caption=f"Captured by [{BOT_NAME}]({https://t.me/{BOT_USERNAME})"
+                caption=f"Captured by [{BOT_NAME}](https://t.me/{BOT_USERNAME})"
             )
         except TypeError:
             return await m.edit("No Such Website.")
