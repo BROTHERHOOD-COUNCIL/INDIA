@@ -1,7 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from FallenRobot import pbot as app, BOT_NAME, BOT_USERNAME
+from FallenRobot import BOT_NAME, BOT_USERNAME
+from FallenRobot import pbot as app
 from FallenRobot.utils.errors import capture_err
 
 __help__ = """
@@ -22,7 +23,7 @@ async def take_ss(_, message: Message):
         try:
             await message.reply_document(
                 document=f"https://webshot.amanoteam.com/print?q={url}",
-                caption=f"Captured by [{BOT_NAME}](https://t.me/{BOT_USERNAME})"
+                caption=f"Captured by [{BOT_NAME}](https://t.me/{BOT_USERNAME})",
             )
         except TypeError:
             return await m.edit("No Such Website.")
