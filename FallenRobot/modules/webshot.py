@@ -1,10 +1,9 @@
-from io import BytesIO
-from asyncio import gather
 from base64 import b64decode
+from inspect import getfullargspec
+from io import BytesIO
 
 from pyrogram import filters
 from pyrogram.types import Message
-from inspect import getfullargspec
 
 from FallenRobot import pbot as app
 from FallenRobot.utils.post import post
@@ -43,7 +42,6 @@ async def eor(msg: Message, **kwargs):
     return await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 
-
 @app.on_message(filters.command(["webss", "ss", "webshot"]))
 async def take_ss(_, message: Message):
     if len(message.command) < 2:
@@ -79,7 +77,6 @@ async def take_ss(_, message: Message):
         await m.delete()
     except Exception as e:
         await m.edit(str(e))
-
 
 
 __help__ = """
