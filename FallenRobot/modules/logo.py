@@ -6,7 +6,7 @@ import random
 import requests
 from PIL import Image, ImageDraw, ImageFont
 
-from FallenRobot import OWNER_ID, BOT_NAME, BOT_USERNAME, telethn
+from FallenRobot import BOT_NAME, BOT_USERNAME, OWNER_ID, telethn
 from FallenRobot.events import register
 
 LOGO_LINKS = [
@@ -277,7 +277,9 @@ async def lego(event):
         fname = "fallen.png"
         img.save(fname, "png")
         await telethn.send_file(
-            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [{BOT_NAME}](https://t.me/{BOT_USERNAME})"
+            event.chat_id,
+            file=fname,
+            caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [{BOT_NAME}](https://t.me/{BOT_USERNAME})",
         )
         await pesan.delete()
         if os.path.exists(fname):
@@ -308,7 +310,9 @@ async def lego(event):
         fname = "fallen.png"
         img.save(fname, "png")
         await telethn.send_file(
-            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [{BOT_NAME}](https://t.me/{BOT_USERNAME})"
+            event.chat_id,
+            file=fname,
+            caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [{BOT_NAME}](https://t.me/{BOT_USERNAME})",
         )
         await pesan.delete()
         if os.path.exists(fname):
