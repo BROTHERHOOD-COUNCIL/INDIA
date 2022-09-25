@@ -789,7 +789,6 @@ def main():
         except BadRequest as e:
             LOGGER.warning(e.message)
 
-)
 
     start_handler = CommandHandler("start", start)
 
