@@ -6,7 +6,7 @@ import random
 import requests
 from PIL import Image, ImageDraw, ImageFont
 
-from FallenRobot import OWNER_ID, SUPPORT_CHAT, telethn
+from FallenRobot import OWNER_ID, BOT_NAME, BOT_USERNAME, telethn
 from FallenRobot.events import register
 
 LOGO_LINKS = [
@@ -277,13 +277,42 @@ async def lego(event):
         fname = "fallen.png"
         img.save(fname, "png")
         await telethn.send_file(
-            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ғᴀʟʟᴇɴ ✘ ʀᴏʙᴏᴛ"
+            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [{BOT_NAME}](https://t.me/{BOT_USERNAME})"
         )
         await pesan.delete()
         if os.path.exists(fname):
             os.remove(fname)
     except Exception:
-        await event.reply(f"ғʟᴏᴏᴅᴡᴀɪᴛ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
+        text = event.pattern_match.group(1)
+        randc = random.choice(LOGO_LINKS)
+        img = Image.open(io.BytesIO(requests.get(randc).content))
+        draw = ImageDraw.Draw(img)
+        image_widthz, image_heightz = img.size
+        fnt = glob.glob("./FallenRobot/resources/fonts/*")
+        randf = random.choice(fnt)
+        font = ImageFont.truetype(randf, 120)
+        w, h = draw.textsize(text, font=font)
+        h += int(h * 0.21)
+        image_width, image_height = img.size
+        draw.text(
+            ((image_widthz - w) / 2, (image_heightz - h) / 2),
+            text,
+            font=font,
+            fill=(255, 255, 255),
+        )
+        x = (image_widthz - w) / 2
+        y = (image_heightz - h) / 2 + 6
+        draw.text(
+            (x, y), text, font=font, fill="white", stroke_width=1, stroke_fill="black"
+        )
+        fname = "fallen.png"
+        img.save(fname, "png")
+        await telethn.send_file(
+            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [{BOT_NAME}](https://t.me/{BOT_USERNAME})"
+        )
+        await pesan.delete()
+        if os.path.exists(fname):
+            os.remove(fname)
 
 
 __mod_name__ = "Lᴏɢᴏ​"
