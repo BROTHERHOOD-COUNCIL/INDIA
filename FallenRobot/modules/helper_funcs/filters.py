@@ -1,10 +1,15 @@
+from FallenRobot import DEV_USERS, DRAGONS, DEMONS
 from telegram import Message
 from telegram.ext import BaseFilter
 
-from FallenRobot import DEV_USERS, DRAGONS
-
 
 class CustomFilters(object):
+    class _Supporters(BaseFilter):
+        def filter(self, message: Message):
+            return bool(message.from_user and message.from_user.id in DEMONS)
+
+    support_filter = _Supporters()
+
     class _Sudoers(BaseFilter):
         def filter(self, message: Message):
             return bool(message.from_user and message.from_user.id in DRAGONS)
@@ -24,7 +29,7 @@ class CustomFilters(object):
 
         def filter(self, message: Message):
             return bool(
-                message.document and message.document.mime_type == self.mime_type
+                message.document and message.document.mime_type == self.mime_type,
             )
 
     mime_type = _MimeType
@@ -36,7 +41,7 @@ class CustomFilters(object):
                 or message.sticker
                 or message.photo
                 or message.document
-                or message.video
+                or message.video,
             )
 
     has_text = _HasText()
