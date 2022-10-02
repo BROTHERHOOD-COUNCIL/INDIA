@@ -98,8 +98,8 @@ def kuki(update: Update, context: CallbackContext):
     msg = "• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
     keyboard = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton(text="ᴇɴᴀʙʟᴇ", callback_data="add_chat({})")],
-            [InlineKeyboardButton(text="ᴅɪsᴀʙʟᴇ", callback_data="rm_chat({})")],
+            [InlineKeyboardButton(text="ᴇɴᴀʙʟᴇ", callback_data="add_chat({})"),
+             InlineKeyboardButton(text="ᴅɪsᴀʙʟᴇ", callback_data="rm_chat({})")],
         ]
     )
     message.reply_text(
