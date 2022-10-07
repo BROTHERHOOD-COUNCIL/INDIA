@@ -1,16 +1,19 @@
-from TruthDarePy import TD
 from telegram import Update
-from telegram.ext import CallbackContext, CommandHandler 
+from telegram.ext import CallbackContext, CommandHandler
+from TruthDarePy import TD
 
 love = TD()
+
 
 def truth(update: Update, context: CallbackContext):
     message = update.effective_message
     message.reply_text(love.truth(lang="en"))
 
+
 def dare(update: Update, context: CallbackContext):
     message = update.effective_message
     message.reply_text(love.dare(lang="en"))
+
 
 TRUTH_HANDLER = CommandHandler("truth", truth)
 DARE_HANDLER = CommandHandler("dare", dare)
