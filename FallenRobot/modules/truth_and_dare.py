@@ -1,27 +1,19 @@
-import requests
+from TruthDarePy import TD
 from telegram import Update
-from telegram.ext import CallbackContext
+from telegram.ext import CallbackContext, CommandHandler 
 
-from FallenRobot import dispatcher
-from FallenRobot.modules.disable import DisableAbleCommandHandler
-
+love = TD()
 
 def truth(update: Update, context: CallbackContext):
-    context.args
-    truth = requests.get("https://elianaapi.herokuapp.com/games/truth").json()
-    truth = truth.get("truth")
-    update.effective_message.reply_text(truth)
-
+    message = update.effective_message
+    message.reply_text(love.truth(lang="en"))
 
 def dare(update: Update, context: CallbackContext):
-    context.args
-    dare = requests.get("https://elianaapi.herokuapp.com/games/dares").json()
-    dare = dare.get("dare")
-    update.effective_message.reply_text(dare)
+    message = update.effective_message
+    message.reply_text(love.dare(lang="en"))
 
-
-TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
-DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
+TRUTH_HANDLER = CommandHandler("truth", truth)
+DARE_HANDLER = CommandHandler("dare", dare)
 
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
