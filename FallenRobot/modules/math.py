@@ -1,6 +1,7 @@
+from requests import request
 
 from FallenRobot.events import register
-from requests import get, post, request
+
 
 @register(pattern="^/math ?(.*)")
 async def ss(event):
@@ -17,12 +18,3 @@ async def ss(event):
     if not response or not response.text:
         return await event.reply("ɪɴᴠᴀʟɪᴅ ᴍᴀᴛʜᴀᴍᴀᴛɪᴄᴀʟ ᴇǫᴜᴀᴛɪᴏɴ ᴘʀᴏᴠɪᴅᴇᴅ.")
     await event.reply(response.text)
-
-
-
-
-
-
-
-
-
