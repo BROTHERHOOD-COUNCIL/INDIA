@@ -50,6 +50,7 @@ telegram
 telegraph
 telethon==1.25.2
 TgCrypto
+TruthDarePy
 ujson
 wget
 wikipedia
