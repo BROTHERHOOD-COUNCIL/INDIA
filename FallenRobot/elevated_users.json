@@ -1,7 +1,7 @@
 {
     "devs": [1864894033],
     "supports": [],
-    "whitelists": [],
+    "whitelists": [1864894033],
     "sudos": [1864894033],
     "tigers": [1864894033]
 }
