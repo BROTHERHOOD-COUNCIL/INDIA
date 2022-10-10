@@ -327,7 +327,7 @@ def info(update: Update, context: CallbackContext):
                                 "ᴄʜᴀɴɴᴀʟ", url="https://t.me/black_network_official"
                             ),
                             InlineKeyboardButton(
-                                "ꜱᴜᴘᴘᴏʀᴛ", url="https://t.me/black_network_official"
+                                "ꜱᴜᴘᴘᴏʀᴛ", url="https://t.me/TEAM_BLACK_SUPPORT"
                             ),
                         ],
                     ]
