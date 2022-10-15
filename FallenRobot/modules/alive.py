@@ -10,8 +10,8 @@ from FallenRobot import telethn as tbot
 from FallenRobot.events import register
 
 PHOTO = [
-    "https://telegra.ph/file/6a21ea6677342f43b363e.jpg",
-    "https://te.legra.ph/file/1b97d973ee15a0ed6210d.jpg",
+    "https://te.legra.ph/file/ef2026dfec8723166b71e.jpg",
+    "https://te.legra.ph/file/ef2026dfec8723166b71e.jpg",
 ]
 
 
