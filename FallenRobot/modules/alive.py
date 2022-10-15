@@ -19,7 +19,7 @@ PHOTO = [
 async def awake(event):
     TEXT = f"**ʜᴇʏ​ [{event.sender.first_name}](tg://user?id={event.sender.id}),\n\nɪ ᴀᴍ {dispatcher.bot.first_name}**\n━━━━━━━━━━━━━━━━━━━\n\n"
     TEXT += (
-        f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ : [𝐓𝐘𝐂𝐎𝐎𝐍 𝐅𝐎𝐔𝐍𝐃𝐄𝐑](https://t.me/{OWNER_USERNAME})** \n\n"
+        f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ : [𝐅𝐎𝐔𝐍𝐃𝐄𝐑](https://t.me/{OWNER_USERNAME})** \n\n"
     )
     TEXT += f"» **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{telever}` \n\n"
     TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n\n"
